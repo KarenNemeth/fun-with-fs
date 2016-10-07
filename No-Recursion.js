@@ -1,10 +1,4 @@
 const fs = require("fs");
-const pathModule = require("path");
-const chalk = require('chalk');
-var error = chalk.bold.red;
-var property = chalk.cyan;
-var note = chalk.green;
-var desired = chalk.magenta;
 var promises = [];
 
 function readIt(directory){
@@ -17,7 +11,7 @@ function readIt(directory){
                     var path = directory + "/" + items[i];
                     promises.push(stats(path));
                 }
-                Promise.all(promises).then(function(promises){
+                Promise.all(promises).then(function(){
                     resolve();
                 });
             }

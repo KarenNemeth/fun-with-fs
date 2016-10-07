@@ -5,11 +5,10 @@ const path = require("path");
 var originalPath = (__dirname + "/files");
 
 function read(currentPath) {
-    fs.readdir(currentPath, function(err, files) {
+    fs.readdirSync(currentPath, function(err, files) {
         if (err){
             console.log(err);
             process.exit();
-            return;
         }
         console.log(currentPath + " contains " + files);
         files.map(function(file){
